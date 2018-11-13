@@ -9,6 +9,7 @@
 
 ### Assosiation
 -has_many :group-users
+
 -has_many :messages
 
 ## groupsテーブル
@@ -19,6 +20,7 @@
 
 ### Association
 -has_many :group-users
+
 -has_many :messages
 
 ## group-usersテーブル
@@ -30,6 +32,7 @@
 
 ### Association
 -beliongs_to :users
+
 -belongs_to :groups
 
 ## messagesテーブル
@@ -42,4 +45,5 @@
 
 ### Association
 -belongs_to :users
+
 -belongs_to :groups
