@@ -3,47 +3,40 @@
 ## usersテーブル
 |column|type|option|
 |------|-------|----------------------------|
-|id|intager|null: false, foreign_key: true|
 |name|string |null: false, unique: true|
-|e-mail|string |null: false, unique: true|
 
 ### Assosiation
 -has_many :group-users
-
+-has_many :groups
 -has_many :messages
 
 ## groupsテーブル
 |column|type|option|
 |------|-------|----------------------------|
-|id|intager|null: false, foreign_key: true|
 |name|string|null : alse, unique: true|
 
 ### Association
 -has_many :group-users
-
+-has_many :users
 -has_many :messages
 
-## group-usersテーブル
+## group_usersテーブル
 |column|type|option|
 |--------|-------|----------------------------|
-|id|intager|null:false, foreign_key: true|
 |user_id |integer|null: false, unique: true|
 |group_id|integer|null: false, unique: true|
 
 ### Association
--beliongs_to :users
-
--belongs_to :groups
+-beliongs_to :user
+-belongs_to :group
 
 ## messagesテーブル
 |column|type|option|
 |--------|-------|----------------------------|
-|id|intager|null:false, foreign_key: true|
-|user_id|integer|null: false, unique: true|
-|group_id|integer|null: false, unique: true|
-|message|text|null: false|
+|user_id|integer|null: false, unique: true, foreign_key: true|
+|group_id|integer|null: false, unique: true, foreign_key: true|
+|body|text|null: false|
 
 ### Association
--belongs_to :users
-
--belongs_to :groups
+-belongs_to :user
+-belongs_to :group
