@@ -6,8 +6,7 @@
 |name|string |null: false, unique: true|
 
 ### Assosiation
--has_many :group-users
--has_many :groups
+-has_many :groups, through: :group_users
 -has_many :messages
 
 ## groupsテーブル
@@ -16,15 +15,14 @@
 |name|string|null : alse, unique: true|
 
 ### Association
--has_many :group-users
--has_many :users
+-has_many :users, thorough: :group_users
 -has_many :messages
 
 ## group_usersテーブル
 |column|type|option|
 |--------|-------|----------------------------|
-|user_id |integer|null: false, unique: true|
-|group_id|integer|null: false, unique: true|
+|user_id |integer|null: false, unique: true, foreign_key: true|
+|group_id|integer|null: false, unique: true, foreign_key: true|
 
 ### Association
 -beliongs_to :user
@@ -33,8 +31,8 @@
 ## messagesテーブル
 |column|type|option|
 |--------|-------|----------------------------|
-|user_id|integer|null: false, unique: true, foreign_key: true|
-|group_id|integer|null: false, unique: true, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true, index|
+|group_id|integer|null: false, foreign_key: true, index|
 |body|text|null: false|
 
 ### Association
