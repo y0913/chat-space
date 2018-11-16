@@ -7,7 +7,9 @@
 
 ### Assosiation
 -has_many :groups, through: :group_users
+
 -has_many :group_users
+
 -has_many :messages
 
 ## groupsテーブル
@@ -17,7 +19,9 @@
 
 ### Association
 -has_many :users, thorough: :group_users
+
 -has_many :group_users
+
 -has_many :messages
 
 ## group_usersテーブル
