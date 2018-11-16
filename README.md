@@ -3,21 +3,21 @@
 ## usersテーブル
 |column|type|option|
 |------|-------|----------------------------|
-|name|string |null: false, unique: true|
+|name|string |null: false, unique: true, index|
 
 ### Assosiation
 -has_many :groups, through: :group_users
-
+-has_many :group_users
 -has_many :messages
 
 ## groupsテーブル
 |column|type|option|
 |------|-------|----------------------------|
-|name|string|null : alse, unique: true|
+|name|string|null : false, unique: true, index|
 
 ### Association
 -has_many :users, thorough: :group_users
-
+-has_many :group_users
 -has_many :messages
 
 ## group_usersテーブル
@@ -37,6 +37,7 @@
 |user_id|integer|null: false, foreign_key: true, index|
 |group_id|integer|null: false, foreign_key: true, index|
 |body|text|null: false|
+|image|string|foreign_key:true, index|
 
 ### Association
 -belongs_to :user
