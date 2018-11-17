@@ -6,9 +6,9 @@
 |name|string |null: false, unique: true, index|
 
 ### Assosiation
--has_many :groups, through: :group_users
+-has_many :groups, through: :groups_users
 
--has_many :group_users
+-has_many :groups_users
 
 -has_many :messages
 
@@ -18,13 +18,13 @@
 |name|string|null : false, unique: true, index|
 
 ### Association
--has_many :users, thorough: :group_users
+-has_many :users, thorough: :groups_users
 
--has_many :group_users
+-has_many :groups_users
 
 -has_many :messages
 
-## group_usersテーブル
+## groups_usersテーブル
 |column|type|option|
 |--------|-------|----------------------------|
 |user_id |integer|null: false, unique: true, foreign_key: true|
