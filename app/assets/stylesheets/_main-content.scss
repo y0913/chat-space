@@ -1,0 +1,33 @@
+
+.main-content__body{
+  height: calc(100vh - 15% - 90px);
+  overflow: scroll;
+
+    &__message-list{
+      padding-top: 26px;
+      padding-left: 40px;
+
+        .main-content__message{
+          padding: 20px 0;
+
+            .main-content__message-name{
+              color: #434A54;
+              font-size: 16px;
+              font-weight: bold;
+              float: left;
+
+                .main-content__message-time{
+                  color: #999999;
+                  font-size: 12px;
+                  padding: 0 10px 10px;
+                  float: left;
+
+                    .main-content__message-body{
+                      clear: both;
+                      color: #434A54;
+                    }
+                }
+            }
+        }
+    }
+}

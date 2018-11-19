@@ -1,0 +1,21 @@
+.left-content__groups{
+  height: 85%;
+  width: 100%;
+
+    &__list{
+      height: 100%;
+
+        &__group{
+          padding: 20px;
+          color: $white ;
+
+            &-name{
+              font-size: 15px;
+
+                &-message{
+                  font-size: 11px;
+                }
+            }
+        }
+    }
+}

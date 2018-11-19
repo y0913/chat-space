@@ -1,0 +1,46 @@
+.left-content
+	.left-content__user
+		.left-content__user-contents
+			.left-content__user-name
+				current_user
+				= link_to '/chat_groups/new' do
+					= fa_icon 'edit', class: "left-content__user-name"
+				= link_to '/users/edit' do
+					=fa_icon 'cog', class: "chat-side__user--edit-user"
+					.left-content__user--new--group
+
+	.left-content__groups
+		.left-content__group-list
+			.left-content__group
+				wwwwwwwww
+				.left-content__group-name
+					sssssssssss
+					.left-content__group-message
+						eeeeeee
+.main-content
+	.main-content__header
+		.main-content__header--group.clearfix
+			.main-content__header--group--name
+				テストです。
+			%a.chat-main__header--group-edit-btn{href: "/groups/1676/edit"} edit
+		.main-content__header-menmbers
+			ああああ
+
+
+	.main-content__body
+		.main-content__body__message-list
+			.main-content__message
+				.main-content__message-name
+					山田太郎
+				.main-content__message-time
+					eeeeeee
+				.main-content__message-body
+					mmmmmmmmmmmmm
+
+	.chat-footer
+		.chat-footer__body
+			%textarea.message_body{name: "message[body]", placeholder: "type a message", row: "1"}
+			.chat-footer__file
+				= link_to 'name: "message[image]", type:"file"' do
+					= fa_icon 'image', class: "textarea"
+		%input{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
