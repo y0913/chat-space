@@ -21,8 +21,7 @@
 		.main-content__header--group.clearfix
 			.main-content__header--group--name
 				テストです。
-			%a.chat-main__header--group-edit-btn{:href => "/groups/1676/edit"} 
-				edit
+			%a.chat-main__header--group-edit-btn{href: "/groups/1676/edit"} edit
 		.main-content__header-menmbers
 			ああああ
 
@@ -39,11 +38,11 @@
 
 	.chat-footer
 		.chat-footer__body
-			%textarea.message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+			%textarea.message_body{name: "message[body]", placeholder: "type a message", row: "1"}
 			.chat-footer__file
-				%input#message_image{:name => "message[image]", :type => "file"}/
+				%input#message_image{name: "message[image]", type:"file"}/
 				%i.fa.fa-image
-		%input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+		%input{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
 
 
 
