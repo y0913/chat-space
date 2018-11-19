@@ -1,0 +1,53 @@
+.left-content
+	.left-content__user
+		.left-content__user-contents
+			.left-content__user-name
+				aaaaaaaa
+				%i.fa.fa-pencil-square-o
+				%a.chat-side__user--edit-user
+				%i.fa.fa-cog
+					.left-content__user--new--group
+
+	.left-content__groups
+		.left-content__group-list
+			.left-content__group
+				wwwwwwwww
+				.left-content__group-name
+					sssssssssss
+					.left-content__group-message
+						eeeeeee
+.main-content
+	.main-content__header
+		.main-content__header--group.clearfix
+			.main-content__header--group--name
+				テストです。
+			%a.chat-main__header--group-edit-btn{:href => "/groups/1676/edit"} 
+				edit
+		.main-content__header-menmbers
+			ああああ
+
+
+	.main-content__body
+		.main-content__body--message-list
+			.main-content--message
+				.main-content--message-name
+					山田太郎
+				.main-content__message-time
+					eeeeeee
+				.main-content__message-body
+					mmmmmmmmmmmmm
+
+	.chat-footer
+		.chat-footer__body
+			%textarea.message_body{:name => "message[body]", :placeholder => "type a message", :row => "1"}
+			.chat-footer__file
+				%input#message_image{:name => "message[image]", :type => "file"}/
+				%i.fa.fa-image
+		%input{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+
+
+
+
+
+
