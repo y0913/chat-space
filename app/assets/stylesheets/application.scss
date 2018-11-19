@@ -1,9 +1,19 @@
 @import "./reset";
 
-@import "./view";
+@import "./colors";
+
+@import "./left-header";
+
+@import "./side-bar";
+
+@import "./right-header";
+
+@import "./main-content";
+
+@import "./footer";
 
 
-@import "font-awesome";
+
 
 /*
  *= require font-awesome
