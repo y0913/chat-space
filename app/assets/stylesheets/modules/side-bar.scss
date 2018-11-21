@@ -2,7 +2,7 @@
   height: 85%;
   width: 100%;
 
-    &__list{
+    &__group-list{
       height: 100%;
 
         &__group{
@@ -11,6 +11,8 @@
 
             &-name{
               font-size: 15px;
+              box-sizing: border-box;
+              padding: 20px o 40px;
 
                 &-message{
                   font-size: 11px;
@@ -18,4 +20,10 @@
             }
         }
     }
+}
+
+.left-content__group-name{
+  box-sizing:border-box;
+  padding: 20px 0 40px;
+  color: $white;
 }
