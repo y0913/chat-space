@@ -2,45 +2,43 @@
 	.left-content__user
 		.left-content__user-contents
 			.left-content__user-name
-				current_user
-				= link_to '/chat_groups/new' do
-					= fa_icon 'edit', class: "left-content__user-name"
+				= current_user.name
+				= link_to '/groups/1/edit' do
+					= fa_icon 'edit', class: "left-content__user-icon"
 				= link_to '/users/edit' do
-					=fa_icon 'cog', class: "chat-side__user--edit-user"
+					=fa_icon 'cog', class: "chat-side__user--edit-icon"
 					.left-content__user--new--group
 
 	.left-content__groups
 		.left-content__group-list
 			.left-content__group
-				wwwwwwwww
-				.left-content__group-name
-					sssssssssss
-					.left-content__group-message
-						eeeeeee
+			- current_user.groups.each do |group|
+				.group
+				= link_to group_messages_path(group) do
+					.left-content__group-name
+						= group.name
+						.left-content__group-message
 .main-content
 	.main-content__header
 		.main-content__header--group.clearfix
 			.main-content__header--group--name
-				テストです。
-			%a.chat-main__header--group-edit-btn{href: "/groups/1676/edit"} edit
+				= @group.name    #コントローラで定義されている。そこから@で引っ張る。
+			%a.chat-main__header--group-edit-btn{href: "/groups/edit"} edit
 		.main-content__header-menmbers
-			ああああ
-
-
+			- @group.users.each do |user|	#中間テーブルから取得。シークエルプロ確認→データがあるので、中間テーブルから取得しようと考える。
+				= user.name
 	.main-content__body
 		.main-content__body__message-list
 			.main-content__message
-				.main-content__message-name
-					山田太郎
-				.main-content__message-time
-					eeeeeee
-				.main-content__message-body
-					mmmmmmmmmmmmm
+				= render @messages
 
 	.chat-footer
 		.chat-footer__body
-			%textarea.message_body{name: "message[body]", placeholder: "type a message", row: "1"}
-			.chat-footer__file
-				= link_to 'name: "message[image]", type:"file"' do
-					= fa_icon 'image', class: "textarea"
-		%input{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+			= form_for [@group, @message] do |f|
+				= f.text_field :content, class: 'form__message', placeholder: 'type a message'
+				.form__mask
+					= f.label :image, class: 'form__mask__image' do
+						= fa_icon 'picture-o', class: 'icon'
+						= f.file_field :image, class: 'hidden'
+				.submit
+					= f.submit 'Send', class: "form__submit"

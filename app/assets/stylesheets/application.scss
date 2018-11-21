@@ -1,15 +1,15 @@
 @import "./reset";
-
 @import "./colors";
-
+@import "./fontcolor";
 @import "./left-header";
-
-@import "./side-bar";
-
 @import "./right-header";
-
 @import "./main-content";
-
+@import "./side_bar";
 @import "./footer";
-
+@import "./groups";
+@import "modules/flash";
+@import "modules/user";
+@import "modules/side-bar";
+@import "modules/group";
+@import "modules/chat";
 @import "font-awesome";

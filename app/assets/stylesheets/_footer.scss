@@ -11,7 +11,7 @@
       height: 50px;
       position: relative;
 
-        textarea.message_body{
+        input#message_content.form__message {
           width: 100%;
           height: 50px;
           line-height: 20px;
@@ -21,14 +21,14 @@
           float: left;
           line-height: 50px;
 
-            input#message_image{
-              display: none;
-            }
+            // .form__mask {
+            //   display: none;
+            // }                    #inpuからform_forに書き換えたため、不要となった。
         }
     }
 }
 
-.chat-footer__file{
+.form__mask{
   position: absolute;
   top: 0;
   right: 0;
@@ -36,20 +36,25 @@
   width: 40px;
   height: 50px;
   text-align: center;
-  cursor: pointer;
   float: left;
+  line-height: 50px;
 
     input#message_image{
       display: none;
+      float: left;
+        label.form__mask__image{
+          float: left;
+          cursor: pointer;
+        }
     }
 }
 
-i.fa.fa-image{
-  display: inline-block;
-  padding-top: 20px;
-}
+// i.fa.fa-image{
+//   display: inline-block;
+//   padding-top: 20px;       #inputからform_forに書き換えたため不要となった。
+// }
 
-input[type='submit'] {
+.form__submit {
   float: left;
   display: inline-block;
   width: 100px;
@@ -59,4 +64,5 @@ input[type='submit'] {
   text-align: center;
   border: none;
   padding: 0;
+  position: absolute;
 }
