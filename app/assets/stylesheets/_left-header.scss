@@ -19,6 +19,7 @@
         position: absolute;
         top: 0;
         bottom:0;
+        padding: 20px;
 
           &__user-name{
             color: #FFFFFF;
@@ -37,4 +38,9 @@
             }
         }
    }
+}
+
+.left-content__groups{
+  padding: 20px;
+  padding-right: -20px;
 }
