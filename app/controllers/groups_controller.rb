@@ -26,6 +26,9 @@ before_action :set_group, only: [:edit, :update]
     end
   end
 
+  def edit
+  end
+
   private
 
   def group_params

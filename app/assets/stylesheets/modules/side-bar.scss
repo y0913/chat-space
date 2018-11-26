@@ -1,6 +1,7 @@
 .left-content__groups{
   height: 85%;
   width: 100%;
+  overflow: scroll;
 
     &__group-list{
       height: 100%;
@@ -9,7 +10,7 @@
           padding: 20px;
           color: $white ;
 
-            &-name{
+            &user-name{
               font-size: 15px;
               box-sizing: border-box;
               padding: 20px o 40px;
