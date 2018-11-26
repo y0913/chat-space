@@ -3,7 +3,7 @@
 		.left-content__user-contents
 			.left-content__user-name
 				= current_user.name
-				= link_to '/groups/1/edit' do
+				= link_to '/groups/new' do
 					= fa_icon 'edit', class: "left-content__user-icon"
 				= link_to '/users/edit' do
 					=fa_icon 'cog', class: "chat-side__user--edit-icon"
