@@ -1,7 +1,8 @@
 $(function(){
 	function buildHTML(message){
 		var addImage = (message.image !== null)? `<img src = "${message.image}">`:''
-	var html = `<div class="main-content__message-chat">
+		var content = (message.content !== null)? `${message.content}`:''
+		var html = `<div class="main-content__message-chat">
     				<div class="main-content__message-name">
     					${message.user_name}
 					</div>
@@ -9,7 +10,7 @@ $(function(){
 						${message.time}
 					</div>
 					<div class="main-content__message-body">
-						${message.content}
+						${content}
 						${addImage}
 					</div>
 				</div>`;
@@ -37,6 +38,7 @@ $(function(){
 			$('.main-content__message').append(html);
 			$('.form__submit').prop('disabled', false);
 			$('.form__message').val('');
+			$('.hidden').val('');
 			scroll()
 		})
 		.fail(function(){
