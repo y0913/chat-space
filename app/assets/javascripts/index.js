@@ -19,7 +19,7 @@ $(function() {
 					</div>
 	                  `
 	    user_list.append(html);
- }
+	　}
 
 	function appendMembers(name, user_id) {
 		var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
@@ -58,16 +58,16 @@ $(function() {
 	});
 
 
- $(function(){
- 	$(document).on("click", '.user-search-add', function(){
-		var name = $(this).data("user-name");
-		var user_id = $(this).data("user-id");
-		$(this).parent().remove();
-		appendMembers(name, user_id);
- 	});
- 	$(document).on("click", '.user-search-remove', function(){
- 		$(this).parent().remove();
- 	})
- });
+	$(function(){
+	 	$(document).on("click", '.user-search-add', function(){
+			var name = $(this).data("user-name");
+			var user_id = $(this).data("user-id");
+			$(this).parent().remove();
+			appendMembers(name, user_id);
+	 	});
+	 	$(document).on("click", '.user-search-remove', function(){
+	 		$(this).parent().remove();
+	 	})
+	});
 });
 
