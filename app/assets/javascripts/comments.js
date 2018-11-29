@@ -58,11 +58,9 @@ $(function(){
 		function update(){
 			if($('.main-content__message-chat')[0]){
 				var message_id = $('.main-content__message-chat:last').data('message-id');
-				console.log(message_id)
 			}else{
 				return false
 			}
-				console.log(111111)
 			$.ajax({
 				url: location.href,
 				type: 'GET',
@@ -72,17 +70,9 @@ $(function(){
 				dataType:'json'
 			})
 			.done(function(data){
-				// if (data.length){
-				// $.each(data, function(i, data){
-				// 	var html = buildHTML(data);
-				// 	$('.main-content__message').append(html)
-				// })
-				// }
-			    
 				$.each(data, function(i, data){
 					var html = buildHTML(data)
 					$('.main-content__message').append(html);
-					console.log("成功")
 				})
 			})
 			.fail(function(data){
