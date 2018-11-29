@@ -59,7 +59,6 @@ $(function(){
 			if($('.main-content__message-chat')[0]){
 				var message_id = $('.main-content__message-chat:last').data('message-id');
 			}else{
-				return false
 			}
 			$.ajax({
 				url: location.href,
@@ -70,7 +69,7 @@ $(function(){
 				dataType:'json'
 			})
 			.done(function(data){
-				$.each(data, function(i, data){
+				data.forEach(function(data){
 					var html = buildHTML(data)
 					$('.main-content__message').append(html);
 				})
