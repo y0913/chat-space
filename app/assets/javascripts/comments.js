@@ -34,14 +34,13 @@ $(function(){
 		})
 		.done(function(data){
 			var html = buildHTML(data);
-			if(message.content && message.image !== null){
+			if (data.content || addImage !== null){
 			$('.main-content__message').append(html);
 			$('.form__submit')
 			$('.form__message').val('');
 			$('.hidden').val('');
 			scroll()
-			else{}
-			}
+		}else{}
 		})
 		.fail(function(){
 			alert('メッセージを入力してください');
@@ -72,6 +71,7 @@ $(function(){
 				dataType:'json'
 			})
 			.done(function(data){
+				console.log(data)
 				data.forEach(function(data){
 					var html = buildHTML(data)
 					$('.main-content__message').append(html);

@@ -1,24 +1,5 @@
 .left-content
-	.left-content__user
-		.left-content__user-contents
-			.left-content__user-name
-				= current_user.name
-				.left-content__user--controll
-					= link_to '/groups/new' do
-						= fa_icon 'edit', class: "left-content__user-icon"
-					= link_to '/users/edit' do
-						=fa_icon 'cog', class: "chat-side__user--edit-icon"
-					.left-content__user--new--group
-
-	.left-content__groups
-		.left-content__group-list
-			.left-content__group
-			- current_user.groups.each do |group|
-				.group
-				= link_to group_messages_path(group) do
-					.left-content__group-name
-						= group.name
-						.left-content__group-message
+	=render 'shared/side_bar'
 .main-content
 	.main-content__header
 		.main-content__header--group.clearfix
