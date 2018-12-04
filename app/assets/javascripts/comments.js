@@ -17,9 +17,6 @@ $(function(){
     return html;
 	};
 //非同期通信
-	function scroll(){
-		$('.messages').animate({scrollTop: $('.message'[0].scrollHeight)});
-	}
 	$('#new_message').on('submit', function(e){
 	e.preventDefault();
 	var formData = new FormData(this);
@@ -34,13 +31,13 @@ $(function(){
 		})
 		.done(function(data){
 			var html = buildHTML(data);
-			if (data.content || addImage !== null){
+			if (data.content || data.image != null){
 			$('.main-content__message').append(html);
 			$('.form__submit')
 			$('.form__message').val('');
 			$('.hidden').val('');
-			scroll()
-		}else{}
+			$('.main-content__body').animate({scrollTop: $('.main-content__body')[0].scrollHeight});
+		}else{alert('メッセージを入力してください');}
 		})
 		.fail(function(){
 			alert('メッセージを入力してください');
@@ -71,10 +68,10 @@ $(function(){
 				dataType:'json'
 			})
 			.done(function(data){
-				console.log(data)
 				data.forEach(function(data){
 					var html = buildHTML(data)
 					$('.main-content__message').append(html);
+					$('.main-content__body').animate({scrollTop: $('.main-content__body')[0].scrollHeight});
 				})
 			})
 			.fail(function(data){
